@@ -1,11 +1,20 @@
-const container =document.querySelector('.container');
+const container = document.querySelector(".container");
 
-for (i=0; i<=15; i++) {
-    for (j=0; j<=15; j++) {
-        const sqrDiv = document.createElement('div');
-        container.appendChild(sqrDiv);
-        sqrDiv.addEventListener('mouseover', () => {
-            sqrDiv.style.backgroundColor = '#a12828';
-        })
+for (i=0; i < 16 ; i++) {
+    for(j=0; j <16 ; j++){
+        const div = document.createElement('div');
+        container.appendChild(div);
+        hovering(div);
     }
 }
+
+function hovering(grid) {
+    grid.addEventListener("mouseover", () => {
+        grid.style.background = "blue";
+    })
+}
+
+
+
+
+

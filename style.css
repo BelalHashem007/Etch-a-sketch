@@ -1,23 +1,24 @@
 body {
+    min-height: 100vh;
     display: flex;
-    width: 100%;
-    height: 100vh;
     justify-content: center;
     align-items: center;
 }
-
-.container {
+.container { 
+    min-width : 512px;
+    min-height: 512px;
     background-color: black;
-    height: 800px;
-    width: 800px;
+    flex: 0;
     display: flex;
     flex-wrap: wrap;
 }
-.container div {
-    background-color: #9e9e9e;
-    border-color: white;
+
+div {
+    height: 30px;
+    width: 30px;
     border-style: solid;
+    border-color: brown;
     border-width: 1px;
-    width: 48px;
-    aspect-ratio: 1/1;
+    background-color: white;
+    flex: auto;
 }
