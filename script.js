@@ -9,8 +9,8 @@ btn.addEventListener("click",() => {
         if (container.hasChildNodes()){
             container.textContent = "";
         }
-        for (i=0; i < numOfGrid ; i++) {
-            for(j=0; j <numOfGrid ; j++){
+        for ( let i=0; i < numOfGrid ; i++) {
+            for(let j=0; j <numOfGrid ; j++){
                 const div = document.createElement('div');
                 div.classList.add('grid');
                 const width = (960/parseInt(numOfGrid))-2;
@@ -26,12 +26,22 @@ btn.addEventListener("click",() => {
     }
 })
 
+function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
 function hovering(grid) {
     grid.addEventListener("mouseover", () => {
-        grid.style.background = "#aaf0c9";
+        let color = getRandomColor();
+        grid.style.background = color;
     })
 }
+
 
 
 
