@@ -1,18 +1,40 @@
 const container = document.querySelector(".container");
+const btn = document.querySelector('#btn');
 
-for (i=0; i < 16 ; i++) {
-    for(j=0; j <16 ; j++){
-        const div = document.createElement('div');
-        container.appendChild(div);
-        hovering(div);
+let numOfGrid=0;
+
+btn.addEventListener("click",() => {
+     numOfGrid = prompt("Write down the number of squares(x*x). Limit is 100.");
+     if (numOfGrid <=100) {
+        if (container.hasChildNodes()){
+            container.textContent = "";
+        }
+        for (i=0; i < numOfGrid ; i++) {
+            for(j=0; j <numOfGrid ; j++){
+                const div = document.createElement('div');
+                div.classList.add('grid');
+                const width = (960/parseInt(numOfGrid))-2;
+                const height = (600/parseInt(numOfGrid))-2;
+                div.setAttribute("style", "height:"+height+"px; width:"+width+"px;")
+                container.appendChild(div);
+                hovering(div);
+            }
+        }
     }
-}
+    else {
+        alert("Error!, Please enter a number less or equal to 100")
+    }
+})
+
 
 function hovering(grid) {
     grid.addEventListener("mouseover", () => {
-        grid.style.background = "blue";
+        grid.style.background = "#aaf0c9";
     })
 }
+
+
+
 
 
 

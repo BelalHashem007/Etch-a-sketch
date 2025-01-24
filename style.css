@@ -4,18 +4,32 @@ body {
     justify-content: center;
     align-items: center;
 }
-.container { 
-    min-width : 512px;
-    min-height: 512px;
-    background-color: black;
-    flex: 0;
+
+.div1 {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
-div {
+#btn {
     height: 30px;
-    width: 30px;
+    width: 160px;
+}
+
+.container { 
+    width : 960px;
+    height: 600px;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    border-color: blueviolet;
+    border-style: solid;
+    border-radius: 2px;
+}
+
+.grid {
     border-style: solid;
     border-color: brown;
     border-width: 1px;
